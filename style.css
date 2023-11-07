@@ -74,7 +74,7 @@ button{
     box-sizing: border-box;
     background-color: var(--third-color);
     width: 40%;
-    height: 4em;
+    height: auto;
     margin-left:30%;
     margin-top: 0%;
     color: #0e2453;

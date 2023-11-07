@@ -29,7 +29,7 @@ btn.onclick{
         return
      }
 }*/
-let n = parseInt(document.getElementById("diviseur").value, 10);
+/*let n = parseInt(document.getElementById("diviseur").value, 10);
 let a = parseInt(document.getElementById("chiffre-depart").value, 10);
 let b = parseInt(document.getElementById("chiffre-arrive").value, 10);
 let result = '';
@@ -43,7 +43,36 @@ btn.onclick = function() {
         }
     }
     p.innerText = result;
+};*/
+// Assurez-vous que les ID sont uniques et correspondent à ceux de votre HTML
+let btn = document.getElementById("btn");
+
+btn.onclick = function() {
+    // Convertissez les valeurs en nombres ici, à l'intérieur du gestionnaire d'événements
+    let n = parseInt(document.getElementById("nombre").value, 10);
+    let a = parseInt(document.getElementById("chiffre-depart").value, 10);
+    let b = parseInt(document.getElementById("chiffre-arrive").value, 10);
+    let p = document.getElementById("text"); // C'est un élément de paragraphe où vous voulez afficher les résultats
+    let result = ''; // Initialisez result pour accumuler les résultats
+
+    // Vérifiez si les valeurs sont des nombres
+    if (isNaN(n) || isNaN(a) || isNaN(b)) {
+        p.innerText = "Veuillez entrer des valeurs numériques valides.";
+        return; // Utilisez return ici pour arrêter l'exécution si les valeurs ne sont pas des nombres
+    }
+
+    // Trouvez les nombres divisibles
+    for (let i = a; i <= b; i++) {
+        if (i % n === 0) {
+            result += i + " est divisible par " + n + ".\n";
+        }
+    }
+
+    // Mettez à jour le texte de l'élément de paragraphe avec les résultats
+    p.innerText = result;
+    // Pas besoin de return ici car c'est le gestionnaire d'événements
 };
+
 
 
 
